@@ -61,9 +61,16 @@ btn.addEventListener('click', () => {
         </body>
         <script src="node_modules/slidetoggle/umd/slideToggle.min.js"></script>
         <script>
+            const myVar = Slidetoggle.slideToggle;
+
             const btn = document.querySelector('button.btn');
-            btn.addEventListener('click', () => {
-                slideToggle.slideToggle('div.toggle-div', 300);
+            btn.addEventListener('click', () => myVar.slideToggle('div.toggle-div', 300));
+
+            // 2
+            const ul = document.querySelector('ul.toggle-list');
+            ul.addEventListener('click', evt => {
+                if (evt.target instanceof HTMLSpanElement)
+                    myVar.slideToggle(evt.target.nextElementSibling, 500);
             });
         </script>
     </html>
