@@ -1,6 +1,8 @@
-import { Slide, Prototype, SlideProps, attrData } from './dtos.d';
+import { Slide, Prototype, SlideProps, attrData } from './dtos';
+
 export class SlideUp implements Slide, Prototype {
     private startTime: number;
+
     constructor() {}
 
     sliding(el: HTMLElement, originalProps: SlideProps, timingFn: number): void {

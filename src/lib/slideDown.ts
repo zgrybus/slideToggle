@@ -1,8 +1,9 @@
-import { Slide, Prototype, SlideProps, attrData } from './dtos.d';
+import { Slide, Prototype, SlideProps, attrData } from './dtos';
 export class SlideDown implements Slide, Prototype {
+
     private startTime: number;
-    constructor() {
-    }
+
+    constructor() {}
 
     sliding(el: HTMLElement, originalProps: SlideProps, timingFn: number): void {
         requestAnimationFrame(timestamp => this.rafFn(timestamp, el, originalProps, timingFn))

@@ -1,8 +1,10 @@
-import { attrData, SlideProps, Prototype, Slide } from './dtos.d';
+import { attrData, SlideProps, Prototype, Slide } from './dtos';
 
 import { elProps } from './elProps';
 import { builder } from './builder';
+
 export class SlideToggle {
+    
     public slideToggle(el: string | HTMLElement, timingFn: number = 500): void {
         const currentEl: HTMLElement = this.getElement(el);
 

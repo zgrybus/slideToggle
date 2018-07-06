@@ -1,7 +1,8 @@
-import { Prototype, Slide } from './dtos.d';
+import { Prototype, Slide } from './dtos';
 
 import { slideUp } from './slideUp';
 import { slideDown } from './slideDown';
+
 export class Builder {
     private prototypeMap: { [key: string]: Prototype & Slide } = {};
 

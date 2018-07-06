@@ -1,4 +1,4 @@
-import { SlideProps } from './dtos.d';
+import { SlideProps } from './dtos';
 export class ElProps {
 
     public getElProps(el: HTMLElement): SlideProps {
