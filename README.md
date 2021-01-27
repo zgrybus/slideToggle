@@ -59,7 +59,7 @@ btn.addEventListener('click', () => {
             <button class="btn">Click me</button>
             <div class="toggle-div">Click on button will toggle my height</div>
         </body>
-        <script src="node_modules/slidetoggle/umd/slideToggle.min.js"></script>
+        <script src="node_modules/slidetoggle/umd/slidetoggle.min.js"></script>
         <script>
             const myVar = Slidetoggle.slideToggle;
 
