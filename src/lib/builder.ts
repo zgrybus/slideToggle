@@ -1,19 +1,18 @@
 import { Prototype, Slide } from './dtos';
-
-import { slideUp } from './slideUp';
 import { slideDown } from './slideDown';
+import { slideUp } from './slideUp';
 
 export class Builder {
-    private prototypeMap: { [key: string]: Prototype & Slide } = {};
+  private prototypeMap: { [key: string]: Prototype & Slide } = {};
 
-    constructor() {
-        this.prototypeMap.up = slideUp;
-        this.prototypeMap.down = slideDown;
-    }
+  constructor() {
+    this.prototypeMap.up = slideUp;
+    this.prototypeMap.down = slideDown;
+  }
 
-    createPrototype(key: 'up' | 'down'): Prototype & Slide {
-        return this.prototypeMap[key].clone();
-    }
+  createPrototype(key: 'up' | 'down'): Prototype & Slide {
+    return this.prototypeMap[key].clone();
+  }
 }
 
-export const builder = new Builder;
+export const builder = new Builder();
