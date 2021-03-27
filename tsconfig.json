@@ -1,31 +1,22 @@
 {
+  "include": ["src"],
   "compilerOptions": {
-    "moduleResolution": "node",
+    "baseUrl": "src",
     "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017"
-    ],
+    "lib": ["dom", "esnext"],
+    "target": "ES5",
+    "jsx": "react",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "forceConsistentCasingInFileNames": true,
-    "pretty": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "lib",
+    "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "typings",
-    "stripInternal": true
+    "outDir": "./dist/esm/"
   },
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false
+  "exclude": ["node_modules"],
 }
