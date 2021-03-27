@@ -1,4 +1,5 @@
 dist
+example
 node_modules
 
 webpack.config.js

@@ -7,8 +7,8 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, './dist/umd'),
-    filename: 'index.js',
-    library: 'react-vr-list',
+    filename: 'slidetoggle.js',
+    library: 'slidetoggle',
     libraryTarget: 'umd',
     globalObject: 'this',
   },
@@ -35,9 +35,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     plugins: [new TsconfigPathsPlugin()],
-  },
-  devServer: {
-    contentBase: './dist',
-    port: 3000,
-  },
+  }
 };
