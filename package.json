@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://www.github.com/zgrybus/slideToggle"
   },
+  "files": [
+    "dist"
+  ],
   "author": "Krzysztof Nofz",
   "license": "MIT",
   "keywords": [
