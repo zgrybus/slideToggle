@@ -29,9 +29,6 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    minimize: false,
-  },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     plugins: [new TsconfigPathsPlugin()],
