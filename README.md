@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/zgrybus/slideToggle)](https://github.com/zgrybus/slideToggle/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/slidetoggle)](https://www.npmjs.com/package/slidetoggle) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/slidetoggle?style=plastic)](https://bundlephobia.com/result?p=slidetoggle)
+
 # **slideToggle()**
 
 > Small library that replaces the so-loved jQuery function.
@@ -30,7 +32,7 @@ npm install --save-dev slidetoggle
 
 Install package by yarn
 
-```npm
+```yarn
 yarn add slidetoggle
 ```
 
