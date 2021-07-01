@@ -19,12 +19,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(css)$/,
+        test: /\.(s(a|c)ss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
-      },
+          'css-loader', 
+          'sass-loader'
+        ]
+     }
     ],
   },
   plugins: [

@@ -6,7 +6,7 @@ module.exports = {
   target: 'web',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, './dist/umd'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'slidetoggle.js',
     library: 'slidetoggle',
     libraryTarget: 'umd',

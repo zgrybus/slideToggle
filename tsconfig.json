@@ -16,7 +16,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "declaration": true,
-    "outDir": "./dist/esm/"
+    "outDir": "./dist"
   },
   "exclude": ["node_modules"],
 }
