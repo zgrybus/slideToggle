@@ -50,10 +50,6 @@ export namespace Element {
     throw new Error('Your element does not exist in the DOM.');
   };
 
-  export const getHeight = (element: HTMLElement) => {
-    return element.offsetHeight;
-  };
-
   export const setAttribute = (
     element: HTMLElement,
     attribute: string,

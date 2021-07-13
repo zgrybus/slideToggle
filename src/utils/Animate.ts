@@ -1,9 +1,9 @@
 import { Types } from '../common/types';
 import { Element } from './Element';
+import { Events } from './Event';
 
 export namespace Animate {
-  const hiddenAttribute = 'data-slide-toggle-hidden';
-  const shownAttribute = 'data-slide-toggle-shown';
+  const slideToggleAttribute = 'data-slide-toggle';
 
   const onRequestAnimationFrame = (callback: () => void) => {
     requestAnimationFrame(callback);
@@ -14,12 +14,19 @@ export namespace Animate {
     return `all ${miliseconds}ms ${transitionFunction} 0s`;
   };
 
-  const isShown = (element: HTMLElement) => {
-    return Element.getAttribute(element, shownAttribute) === 'true';
-  };
+  const isHidden = (element: HTMLElement) =>
+    Element.getAttribute(element, slideToggleAttribute) === 'false';
 
-  const isHidden = (element: HTMLElement) => {
-    return Element.getAttribute(element, hiddenAttribute) === 'true';
+  const isShown = (element: HTMLElement) =>
+    Element.getAttribute(element, slideToggleAttribute) === 'true';
+
+  export const shouldCollapse = (element: HTMLElement) => {
+    const attribute = Element.getAttribute(element, slideToggleAttribute);
+    if (!attribute) {
+      const { height } = Element.getBoxStyles(element);
+      return height && height > 0;
+    }
+    return Element.getAttribute(element, slideToggleAttribute) === 'true';
   };
 
   export const hide = (element: HTMLElement, options: Types.Options) => {
@@ -53,7 +60,7 @@ export namespace Animate {
       });
     });
 
-    Element.setAttribute(element, hiddenAttribute, 'true');
+    Element.setAttribute(element, slideToggleAttribute, 'false');
   };
 
   export const show = (element: HTMLElement, options: Types.Options) => {
@@ -63,13 +70,18 @@ export namespace Animate {
 
     Element.setStyles(element, {
       display: 'block',
-      transition: getTransition(options),
+      height: 'auto',
+      paddingTop: '',
+      paddingBottom: '',
+      borderTopWidth: '',
+      borderBottomWidth: '',
     });
 
-    const { height, ...boxStyles } = Element.getBoxStyles(element);
+    const { height } = Element.getBoxStyles(element);
 
     Element.setStyles(element, {
       display: 'none',
+      transition: getTransition(options),
     });
 
     onRequestAnimationFrame(() => {
@@ -77,23 +89,20 @@ export namespace Animate {
         display: 'block',
         overflow: 'hidden',
         height: '0',
-        paddingTop: '0',
-        paddingBottom: '0',
-        borderTopWidth: '0',
-        borderBottomWidth: '0',
       });
 
       onRequestAnimationFrame(() => {
         Element.setStyles(element, {
           height: `${height}px`,
-          paddingTop: `${boxStyles.padding.top}px`,
-          paddingBottom: `${boxStyles.padding.bottom}px`,
-          borderTopWidth: `${boxStyles.border.top}px`,
-          borderBottomWidth: `${boxStyles.border.bottom}px`,
+        });
+
+        const event = Events.on(element, 'transitionend', () => {
+          Element.setStyles(element, { height: '' });
+          event.destroy();
         });
       });
     });
 
-    Element.setAttribute(element, shownAttribute, 'true');
+    Element.setAttribute(element, slideToggleAttribute, 'true');
   };
 }

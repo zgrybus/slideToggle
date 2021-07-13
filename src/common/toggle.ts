@@ -1,16 +1,19 @@
-import { Element } from '../utils';
+import { Animate, Element } from '../utils';
 import { Types } from './types';
 
 namespace Toggle {
-  export const on = (
-    element: Element.ElementType,
-    options?: Types.Options
-  ) => {};
+  export const on = (element: HTMLElement, options: Types.Options) => {
+    if (Animate.shouldCollapse(element)) {
+      Animate.hide(element, options);
+    } else {
+      Animate.show(element, options);
+    }
+  };
 }
 
 export const toggle = (
   element: Element.ElementType,
-  options?: Types.Options
+  options: Types.Options
 ) => {
-  Toggle.on(element, options);
+  Toggle.on(Element.getElement(element), options);
 };

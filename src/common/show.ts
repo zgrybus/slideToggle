@@ -2,11 +2,11 @@ import { Animate, Element } from '../utils';
 import { Types } from './types';
 
 namespace Show {
-  export const on = (element: Element.ElementType, options: Types.Options) => {
-    Animate.show(Element.getElement(element), options);
+  export const on = (element: HTMLElement, options: Types.Options) => {
+    Animate.show(element, options);
   };
 }
 
 export const show = (element: Element.ElementType, options: Types.Options) => {
-  Show.on(element, options);
+  Show.on(Element.getElement(element), options);
 };
