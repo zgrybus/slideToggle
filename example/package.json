@@ -1,0 +1,32 @@
+{
+  "name": "slidetoggle-example",
+  "version": "0.0.1",
+  "description": "Example app for slidetoggle library",
+  "scripts": {
+    "start": "webpack serve --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/zgrybus/slidetoggle"
+  },
+  "keywords": [],
+  "author": "Krzysztof Nofz",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "typescript": "^4.3.4",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "dependencies": {
+    "slidetoggle": "^3.0.0"
+  }
+}

@@ -1,1 +1,1 @@
-export { slideToggle } from './lib/slideToggle';
+export { hide, show, toggle } from './common';

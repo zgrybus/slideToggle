@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+  .website-title {
+    letter-spacing: 1px;
+    font-size: 40px;
+  }
+  .author {
+    margin-top: 12px;
+    i {
+      font-weight: 600;
+    }
+  }
+}

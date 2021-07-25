@@ -1,7 +1,6 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "baseUrl": "src",
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "target": "ES5",
@@ -12,11 +11,12 @@
     "removeComments": true,
     "moduleResolution": "node",
     "strictPropertyInitialization": false,
+    "suppressImplicitAnyIndexErrors": true,
     "esModuleInterop": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "declaration": true,
-    "outDir": "./dist/esm/"
+    "outDir": "./dist",
   },
   "exclude": ["node_modules"],
 }

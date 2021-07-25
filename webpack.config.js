@@ -1,12 +1,11 @@
 const path = require('path');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   target: 'web',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, './dist/umd'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'slidetoggle.js',
     library: 'slidetoggle',
     libraryTarget: 'umd',
@@ -17,7 +16,7 @@ module.exports = {
       {
         exclude: /\.spec.tsx?$/,
         test: /\.(ts|tsx)$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
         options: {
           transpileOnly: false,
         },
@@ -31,6 +30,5 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
-    plugins: [new TsconfigPathsPlugin()],
   }
 };
