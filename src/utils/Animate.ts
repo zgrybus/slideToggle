@@ -14,11 +14,9 @@ export namespace Animate {
     return `all ${miliseconds}ms ${transitionFunction} 0s`;
   };
 
-  const isHidden = (element: HTMLElement) =>
-    Element.getAttribute(element, slideToggleAttribute) === 'false';
+  const isHidden = (element: HTMLElement) => Element.getAttribute(element, slideToggleAttribute) === 'false';
 
-  const isShown = (element: HTMLElement) =>
-    Element.getAttribute(element, slideToggleAttribute) === 'true';
+  const isShown = (element: HTMLElement) => Element.getAttribute(element, slideToggleAttribute) === 'true';
 
   export const shouldCollapse = (element: HTMLElement) => {
     const attribute = Element.getAttribute(element, slideToggleAttribute);

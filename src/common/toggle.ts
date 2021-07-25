@@ -11,9 +11,6 @@ namespace Toggle {
   };
 }
 
-export const toggle = (
-  element: Element.ElementType,
-  options: Types.Options
-) => {
+export const toggle = (element: Element.ElementType, options: Types.Options) => {
   Toggle.on(Element.getElement(element), options);
 };

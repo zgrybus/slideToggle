@@ -3,3 +3,4 @@ docs
 node_modules
 
 webpack.config.js
+jest.config.js

@@ -15,8 +15,7 @@ export namespace Element {
   >;
   export type ElementType = HTMLElement | string;
 
-  const isElement = (element: ElementType | null): element is HTMLElement =>
-    element instanceof HTMLElement;
+  const isElement = (element: ElementType | null): element is HTMLElement => element instanceof HTMLElement;
 
   export const setStyles = (element: HTMLElement, styles: CSSStyles) => {
     Object.keys(styles).map(key => {
@@ -50,11 +49,7 @@ export namespace Element {
     throw new Error('Your element does not exist in the DOM.');
   };
 
-  export const setAttribute = (
-    element: HTMLElement,
-    attribute: string,
-    value: string
-  ) => {
+  export const setAttribute = (element: HTMLElement, attribute: string, value: string) => {
     element.setAttribute(attribute, value);
   };
 
