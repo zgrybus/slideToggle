@@ -1,6 +1,6 @@
 {
   "name": "slidetoggle",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Small library that replaces the so-loved jQuery function",
   "main": "dist/slidetoggle.js",
   "module": "dist/index.js",
@@ -36,7 +36,6 @@
     "build": "tsc -p ./tsconfig.build.json && webpack --mode=production",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build",
     "release": "release-it"
   },
   "devDependencies": {
