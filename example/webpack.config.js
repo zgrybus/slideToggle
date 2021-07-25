@@ -25,7 +25,20 @@ module.exports = {
           'css-loader', 
           'sass-loader'
         ]
-     }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader:'file-loader',
+        options: {
+          name: "[name].[ext]",
+          outputPath: "icons",
+          publicPath: "icons",
+        }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      }
     ],
   },
   resolve: {
