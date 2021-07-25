@@ -13,7 +13,7 @@ module.exports = {
       {
         exclude: /\.spec.tsx?$/,
         test: /\.(ts|tsx)$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'ts-loader',
         options: {
           transpileOnly: false,
         },

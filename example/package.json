@@ -14,7 +14,6 @@
   "author": "Krzysztof Nofz",
   "license": "MIT",
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^5.2.6",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.6.2",
@@ -25,5 +24,7 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "slidetoggle": "^2.0.1"
+  }
 }
