@@ -36,7 +36,6 @@
     "build": "tsc -p ./tsconfig.build.json && webpack --mode=production",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build",
     "release": "release-it"
   },
   "devDependencies": {
