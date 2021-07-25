@@ -53,7 +53,7 @@ btn.addEventListener('click', () => {
 
 ```html
 <html>
-  <script src="node_modules/slidetoggle/umd/slidetoggle.js"></script>
+  <script src="<your_directory>/slidetoggle/slidetoggle.js"></script>
   <script>
     document.querySelector('button.btn').addEventListener('click', () => {
       const element = document.querySelector('div.section');
