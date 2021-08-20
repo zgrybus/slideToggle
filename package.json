@@ -39,6 +39,7 @@
     "release": "release-it"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.1.0",
     "@types/jest": "26.0.20",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
