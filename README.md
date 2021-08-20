@@ -17,7 +17,9 @@ The library **calculates everything**. The library uses the [requestAnimationFra
   options: {
     miliseconds: number,
     transitionFunction: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear' | 'cubic-bezier(...your custom arguments)'
-  }
+  },
+  onAnimationStart: () => void,
+  onAnimationEnd: () => void
  )
 ```
 
