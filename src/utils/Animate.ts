@@ -10,7 +10,7 @@ export namespace Animate {
   };
 
   const getTransition = (options: Types.Options) => {
-    const { miliseconds, transitionFunction } = options;
+    const { miliseconds = 200, transitionFunction = 'linear' } = options;
     return `all ${miliseconds}ms ${transitionFunction} 0s`;
   };
 
@@ -31,6 +31,8 @@ export namespace Animate {
     if (isHidden(element)) {
       return;
     }
+
+    options.onAnimationStart?.();
 
     const { height, ...boxStyles } = Element.getBoxStyles(element);
 
@@ -55,6 +57,11 @@ export namespace Animate {
           borderTopWidth: '0',
           borderBottomWidth: '0',
         });
+
+        const event = Events.on(element, 'transitionend', () => {
+          event.destroy();
+          options.onAnimationEnd?.();
+        });
       });
     });
 
@@ -65,6 +72,8 @@ export namespace Animate {
     if (isShown(element)) {
       return;
     }
+
+    options.onAnimationStart?.();
 
     Element.setStyles(element, {
       display: 'block',
@@ -88,7 +97,6 @@ export namespace Animate {
         overflow: 'hidden',
         height: '0',
       });
-
       onRequestAnimationFrame(() => {
         Element.setStyles(element, {
           height: `${height}px`,
@@ -97,6 +105,7 @@ export namespace Animate {
         const event = Events.on(element, 'transitionend', () => {
           Element.setStyles(element, { height: '' });
           event.destroy();
+          options.onAnimationEnd?.();
         });
       });
     });
