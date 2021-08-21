@@ -16,10 +16,10 @@ The library **calculates everything**. The library uses the [requestAnimationFra
   selector: string | HTMLElement,
   options: {
     miliseconds: number,
-    transitionFunction: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear' | 'cubic-bezier(...your custom arguments)'
+    transitionFunction: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear' | 'cubic-bezier(...your custom arguments)',
+    onAnimationStart: () => void,
+    onAnimationEnd: () => void,
   },
-  onAnimationStart: () => void,
-  onAnimationEnd: () => void
  )
 ```
 
@@ -47,6 +47,12 @@ btn.addEventListener('click', () => {
   toggle('div.toggle-div', {
     miliseconds: 300,
     transitionFunction: 'ease-in',
+    onAnimationStart: () => {
+      console.log('animation started');
+    },
+    onAnimationEnd: () => {
+      console.log('animation ended');
+    },
   });
 });
 ```
@@ -59,7 +65,15 @@ btn.addEventListener('click', () => {
   <script>
     document.querySelector('button.btn').addEventListener('click', () => {
       const element = document.querySelector('div.section');
-      slidetoggle.toggle(element, 300);
+      slidetoggle.toggle(element, {
+        miliseconds: 300,
+        onAnimationStart: () => {
+          console.log('animation started');
+        },
+        onAnimationEnd: () => {
+          console.log('animation ended');
+        },
+      });
     });
   </script>
 </html>
