@@ -76,6 +76,7 @@ export namespace Animate {
     options.onAnimationStart?.();
 
     Element.setStyles(element, {
+      transition: '',
       display: 'block',
       height: 'auto',
       paddingTop: '',
@@ -88,7 +89,6 @@ export namespace Animate {
 
     Element.setStyles(element, {
       display: 'none',
-      transition: '',
     });
 
     onRequestAnimationFrame(() => {

@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://www.github.com/zgrybus/slidetoggle"
   },
+  "homepage": "https://zgrybus.github.io/slideToggle",
   "publishConfig": {
     "access": "public"
   },

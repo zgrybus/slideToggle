@@ -27,12 +27,11 @@
     .toggled-list-element {
       width: 100px;
       margin-top: 4px;
-      padding: 100px 6px;
+      padding: 6px;
       border: 2px solid #f7f7f7;
       background: #2fbbf4;
 
-      &.show,
-      &.toggle {
+      &.show {
         display: none;
       }
 
