@@ -27,6 +27,6 @@
     "webpack-dev-server": "^3.11.1"
   },
   "dependencies": {
-    "slidetoggle": "^3.0.1"
+    "slidetoggle": "^3.2.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "slidetoggle",
-  "version": "3.1.0",
+  "version": "3.2.1",
   "description": "Small library that replaces the so-loved jQuery function",
   "main": "dist/slidetoggle.js",
   "module": "dist/index.js",
@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://www.github.com/zgrybus/slidetoggle"
   },
+  "homepage": "https://zgrybus.github.io/slideToggle",
   "publishConfig": {
     "access": "public"
   },
