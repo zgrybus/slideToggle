@@ -8,7 +8,7 @@ Events.on('button.toggle', 'click', () => {
   const element = document.querySelector('[data-role="toggle"]') as HTMLElement;
 
   toggle(element, {
-    miliseconds: 100,
+    miliseconds: 1000,
     transitionFunction: 'ease-in',
   });
 });
@@ -17,7 +17,7 @@ Events.on('button.show', 'click', () => {
   const element = document.querySelector('[data-role="show"]') as HTMLElement;
 
   show(element, {
-    miliseconds: 100,
+    miliseconds: 1000,
     transitionFunction: 'ease-in',
   });
 });
@@ -26,7 +26,7 @@ Events.on('button.hide', 'click', () => {
   const element = document.querySelector('[data-role="hide"]') as HTMLElement;
 
   hide(element, {
-    miliseconds: 100,
+    miliseconds: 1000,
     transitionFunction: 'ease-in',
   });
 });

@@ -84,11 +84,11 @@ export namespace Animate {
       borderBottomWidth: '',
     });
 
-    const { height } = Element.getBoxStyles(element);
+    const { height, ...boxStyles } = Element.getBoxStyles(element);
 
     Element.setStyles(element, {
       display: 'none',
-      transition: getTransition(options),
+      transition: '',
     });
 
     onRequestAnimationFrame(() => {
@@ -96,14 +96,30 @@ export namespace Animate {
         display: 'block',
         overflow: 'hidden',
         height: '0',
+        paddingTop: '0',
+        paddingBottom: '0',
+        borderTopWidth: '0',
+        borderBottomWidth: '0',
+        transition: getTransition(options),
       });
       onRequestAnimationFrame(() => {
         Element.setStyles(element, {
           height: `${height}px`,
+          paddingTop: `${boxStyles.padding.top}px`,
+          paddingBottom: `${boxStyles.padding.bottom}px`,
+          borderTopWidth: `${boxStyles.border.top}px`,
+          borderBottomWidth: `${boxStyles.border.bottom}px`,
         });
 
         const event = Events.on(element, 'transitionend', () => {
-          Element.setStyles(element, { height: '' });
+          Element.setStyles(element, {
+            height: '',
+            overflow: '',
+            paddingTop: '',
+            paddingBottom: '',
+            borderTopWidth: '',
+            borderBottomWidth: '',
+          });
           event.destroy();
           options.onAnimationEnd?.();
         });
