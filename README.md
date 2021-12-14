@@ -19,6 +19,8 @@ The library **calculates everything**. The library uses the [requestAnimationFra
     transitionFunction: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear' | 'cubic-bezier(...your custom arguments)',
     onAnimationStart: () => void,
     onAnimationEnd: () => void,
+    onOpen: () => void, // only with toggle()
+    onClose: () => void // only with toggle()
   },
  )
 ```
@@ -53,6 +55,12 @@ btn.addEventListener('click', () => {
     onAnimationEnd: () => {
       console.log('animation ended');
     },
+    onOpen: () => { // This function is only possible with toggle
+      console.log('Only with toggle - when element has 100%');
+    },
+    onClose: () => { // This function is only possible with toggle
+      console.log('Only with toggle - when element has 0%');
+    }
   });
 });
 ```
@@ -65,7 +73,7 @@ btn.addEventListener('click', () => {
   <script>
     document.querySelector('button.btn').addEventListener('click', () => {
       const element = document.querySelector('div.section');
-      slidetoggle.toggle(element, {
+      slidetoggle.show(element, {
         miliseconds: 300,
         onAnimationStart: () => {
           console.log('animation started');
