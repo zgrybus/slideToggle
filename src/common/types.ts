@@ -5,4 +5,9 @@ export namespace Types {
     onAnimationStart?: () => void;
     transitionFunction?: string;
   };
+
+  export type ToggleOptions = {
+    onOpen?: () => void;
+    onClose?: () => void;
+  } & Options
 }
