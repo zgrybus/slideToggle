@@ -9,7 +9,7 @@ Events.on('button.toggle', 'click', () => {
 
   toggle(element, {
     miliseconds: 400,
-    transitionFunction: 'ease-in'
+    transitionFunction: 'ease-in',
   });
 });
 
