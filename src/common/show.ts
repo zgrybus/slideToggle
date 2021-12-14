@@ -7,6 +7,6 @@ namespace Show {
   };
 }
 
-export const show = (element: Element.ElementType, options: Types.Options) => {
+export const show = (element: Element.ElementType, options: Types.ShowOptions) => {
   Show.on(Element.getElement(element), options);
 };

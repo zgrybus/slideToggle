@@ -15,6 +15,9 @@ module.exports = {
     rules: [
       {
         exclude: /\.spec.tsx?$/,
+        include: [
+          path.resolve(__dirname, "src")
+        ],
         test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
         options: {
@@ -23,6 +26,9 @@ module.exports = {
       },
       {
         enforce: 'pre',
+        include: [
+          path.resolve(__dirname, "src")
+        ],
         test: /\.js$/,
         loader: 'source-map-loader',
       },

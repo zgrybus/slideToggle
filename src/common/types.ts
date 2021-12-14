@@ -6,8 +6,12 @@ export namespace Types {
     transitionFunction?: string;
   };
 
+  export type ShowOptions = {
+    elementDisplayStyle?: CSSStyleDeclaration['display'];
+  } & Options;
+
   export type ToggleOptions = {
     onOpen?: () => void;
     onClose?: () => void;
-  } & Options
+  } & ShowOptions
 }

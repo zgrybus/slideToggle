@@ -15,12 +15,34 @@ The library **calculates everything**. The library uses the [requestAnimationFra
  toggle(
   selector: string | HTMLElement,
   options: {
+    // animation time
+    // OPTIONAL
+    // default value - 200
     miliseconds: number,
+    // animation transition function
+    // OPTIONAL
+    // default value - linear
     transitionFunction: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear' | 'cubic-bezier(...your custom arguments)',
+    // callback to notify that animation has started
+    // OPTIONAL
     onAnimationStart: () => void,
+    // callback to notify that animation has ended
+    // OPTIONAL
     onAnimationEnd: () => void,
-    onOpen: () => void, // only with toggle()
-    onClose: () => void // only with toggle()
+    // callback to notify that element has 100% height
+    // works only with toggle()
+    // OPTIONAL
+    onOpen: () => void, 
+    // callback to notify that element has 0% height
+    // works only with toggle()
+    // OPTIONAL
+    onClose: () => void,
+    // when we are done showing the element
+    // we set this value as the display property
+    // works only with toggle(), show()
+    // OPTIONAL
+    // default value - block
+    elementDisplayStyle: string 
   },
  )
 ```
@@ -60,7 +82,8 @@ btn.addEventListener('click', () => {
     },
     onClose: () => { // This function is only possible with toggle
       console.log('Only with toggle - when element has 0%');
-    }
+    },
+    elementDisplayStyle: 'inline-block' 
   });
 });
 ```
@@ -81,6 +104,7 @@ btn.addEventListener('click', () => {
         onAnimationEnd: () => {
           console.log('animation ended');
         },
+        elementDisplayStyle: 'flex'
       });
     });
   </script>

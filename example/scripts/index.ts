@@ -9,7 +9,8 @@ Events.on('button.toggle', 'click', () => {
 
   toggle(element, {
     miliseconds: 400,
-    transitionFunction: 'ease-in'
+    transitionFunction: 'ease-in',
+    elementDisplayStyle: 'inline-flex'
   });
 });
 
@@ -19,6 +20,7 @@ Events.on('button.show', 'click', () => {
   show(element, {
     miliseconds: 400,
     transitionFunction: 'ease-in',
+    elementDisplayStyle: 'flex'
   });
 });
 

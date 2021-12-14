@@ -68,16 +68,18 @@ export namespace Animate {
     Element.setAttribute(element, slideToggleAttribute, 'false');
   };
 
-  export const show = (element: HTMLElement, options: Types.Options) => {
+  export const show = (element: HTMLElement, options: Types.ShowOptions) => {
     if (isShown(element)) {
       return;
     }
+
+    const { elementDisplayStyle = 'block' } = options;
 
     options.onAnimationStart?.();
 
     Element.setStyles(element, {
       transition: '',
-      display: 'block',
+      display: elementDisplayStyle,
       height: 'auto',
       paddingTop: '',
       paddingBottom: '',
@@ -93,7 +95,7 @@ export namespace Animate {
 
     onRequestAnimationFrame(() => {
       Element.setStyles(element, {
-        display: 'block',
+        display: elementDisplayStyle,
         overflow: 'hidden',
         height: '0',
         paddingTop: '0',
