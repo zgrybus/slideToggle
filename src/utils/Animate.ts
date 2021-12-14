@@ -4,6 +4,7 @@ import { Events } from './Event';
 
 export namespace Animate {
   const slideToggleAttribute = 'data-slide-toggle';
+  const isAnimatingAttribute = 'data-slide-toggle-is-animating'
 
   const onRequestAnimationFrame = (callback: () => void) => {
     requestAnimationFrame(callback);
@@ -18,6 +19,8 @@ export namespace Animate {
 
   const isShown = (element: HTMLElement) => Element.getAttribute(element, slideToggleAttribute) === 'true';
 
+  const isAnimating = (element: HTMLElement) => Element.hasAttribute(element, isAnimatingAttribute);
+
   export const shouldCollapse = (element: HTMLElement) => {
     const attribute = Element.getAttribute(element, slideToggleAttribute);
     if (!attribute) {
@@ -28,9 +31,11 @@ export namespace Animate {
   };
 
   export const hide = (element: HTMLElement, options: Types.Options) => {
-    if (isHidden(element)) {
+    if (isHidden(element) || isAnimating(element)) {
       return;
     }
+
+    Element.setAttribute(element, isAnimatingAttribute);
 
     options.onAnimationStart?.();
 
@@ -61,17 +66,20 @@ export namespace Animate {
         const event = Events.on(element, 'transitionend', () => {
           event.destroy();
           options.onAnimationEnd?.();
+          Element.removeAttribute(element, isAnimatingAttribute);
+          Element.setAttribute(element, slideToggleAttribute, 'false');
         });
       });
     });
 
-    Element.setAttribute(element, slideToggleAttribute, 'false');
   };
 
   export const show = (element: HTMLElement, options: Types.ShowOptions) => {
-    if (isShown(element)) {
+    if (isShown(element) || isAnimating(element)) {
       return;
     }
+
+    Element.setAttribute(element, isAnimatingAttribute);
 
     const { elementDisplayStyle = 'block' } = options;
 
@@ -93,7 +101,7 @@ export namespace Animate {
       display: 'none',
     });
 
-    onRequestAnimationFrame(() => {
+    setTimeout(() => {
       Element.setStyles(element, {
         display: elementDisplayStyle,
         overflow: 'hidden',
@@ -122,12 +130,12 @@ export namespace Animate {
             borderTopWidth: '',
             borderBottomWidth: '',
           });
+          Element.removeAttribute(element, isAnimatingAttribute);
+          Element.setAttribute(element, slideToggleAttribute, 'true');
           event.destroy();
           options.onAnimationEnd?.();
         });
       });
-    });
-
-    Element.setAttribute(element, slideToggleAttribute, 'true');
+    }, 0);
   };
 }

@@ -49,8 +49,16 @@ export namespace Element {
     throw new Error('Your element does not exist in the DOM.');
   };
 
-  export const setAttribute = (element: HTMLElement, attribute: string, value: string) => {
+  export const setAttribute = (element: HTMLElement, attribute: string, value = '') => {
     element.setAttribute(attribute, value);
+  };
+
+  export const removeAttribute = (element: HTMLElement, attribute: string) => {
+    element.removeAttribute(attribute);
+  };
+
+  export const hasAttribute = (element: HTMLElement, attribute: string) => {
+    return element.hasAttribute(attribute);
   };
 
   export const getAttribute = (element: HTMLElement, attribute: string) => {
