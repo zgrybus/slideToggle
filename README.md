@@ -9,7 +9,7 @@ The library **calculates everything**. The library uses the [Animation API](http
 
 **Link to working demo - [Demo](https://zgrybus.github.io/slideToggle/)**
 
-**If you have trouble with the API, check the `example/scripts/index.ts` file.**
+**If you have trouble with the API, check the [example/scripts/index.ts](https://github.com/zgrybus/slideToggle/blob/4.0.0/example/scripts/index.ts) file.**
 
 # **API**
 
