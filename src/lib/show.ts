@@ -1,12 +1,15 @@
+import { libConfig } from '../config';
 import { Options } from '../types/lib';
+import { validators } from '../utils/validator';
 
 export const show = (
   element: HTMLElement,
   { miliseconds = 1000, onAnimationEnd, onAnimationStart, elementDisplayStyle = 'block' }: Options
 ) => {
-  if (element.offsetHeight > 0) {
+  if (validators.isVisible(element)) {
     return;
   }
+  element.setAttribute(libConfig.tag, libConfig.values.visible);
 
   onAnimationStart?.(element);
 
@@ -19,7 +22,6 @@ export const show = (
   animationRef.addEventListener('finish', () => {
     element.style.height = '';
     element.style.overflow = '';
-    element.style.display = '';
 
     onAnimationEnd?.(element);
   });

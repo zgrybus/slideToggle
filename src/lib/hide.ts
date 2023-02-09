@@ -1,12 +1,15 @@
+import { libConfig } from '../config';
 import { Options } from '../types/lib';
+import { validators } from '../utils/validator';
 
 export const hide = (
   element: HTMLElement,
   { miliseconds = 1000, onAnimationStart, onAnimationEnd }: Omit<Options, 'elementDisplayStyle'>
 ) => {
-  if (element.offsetHeight === 0) {
+  if (validators.isHidden(element)) {
     return;
   }
+  element.setAttribute(libConfig.tag, libConfig.values.hidden);
 
   onAnimationStart?.(element);
 
