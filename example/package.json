@@ -14,19 +14,19 @@
   "author": "Krzysztof Nofz",
   "license": "MIT",
   "devDependencies": {
-    "css-loader": "^5.2.6",
+    "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^4.5.0",
-    "mini-css-extract-plugin": "^1.6.2",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.35.1",
-    "sass-loader": "^12.1.0",
-    "typescript": "^4.3.4",
+    "sass-loader": "^13.2.0",
+    "typescript": "^4.9.5",
     "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "slidetoggle": "^3.3.2"
+    "slidetoggle": "^4.0.0"
   }
 }
