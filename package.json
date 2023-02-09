@@ -1,6 +1,6 @@
 {
   "name": "slidetoggle",
-  "version": "3.3.2",
+  "version": "4.0.0",
   "description": "Small library that replaces the so-loved jQuery function",
   "main": "dist/slidetoggle.js",
   "module": "dist/index.js",
